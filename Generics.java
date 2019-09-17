@@ -36,11 +36,38 @@ public class Generics {
 		System.out.println(obj1.absEqual(obj2));
 	}
 	
+	static void GenMethodDemo() {
+		System.out.println("5. Обобщенный метод, используется для сравнения двух массивов");
+		Integer n1[] = {1, 2, 3, 4, 5};
+		Integer n2[] = {1, 2, 3, 4, 5};
+		Integer n3[] = {0, 1, 2, 3};
+		
+		System.out.println(GenericMethod.arraysEqual(n1, n2));
+		System.out.println(GenericMethod.arraysEqual(n1, n3));
+	}
+	
+	static void GenConstructDemo() {
+		System.out.println("5. Обобщенный конструктор");
+		GenConstructor sum = new GenConstructor(4.0);
+		System.out.println(sum.getSum());
+	}
+	
+	static void GenIfaceDemo() {
+		System.out.println("6. Обобщенный интерфейс");
+		Integer n[] = {1, 2, 3, 4, 5};
+		GenInterface<Integer> x = new GenInterface<Integer>(n);
+		System.out.println(x.contains(3));
+		System.out.println(x.contains(10));
+	}
+	
 	public static void main(String[] args) {
 		//GenDemo();
 		//TwoGenDemo();
 		//StrictedGenDemo();
-		GenArgumentDemo();
+		//GenArgumentDemo();
+		//GenMethodDemo();
+		//GenConstructDemo();
+		GenIfaceDemo();
 	}
 
 }
